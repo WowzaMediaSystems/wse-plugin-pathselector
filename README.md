@@ -1,6 +1,6 @@
-# ModuleSourceSelector
+# MediaListPathSelector
 
-ModuleSourceSelector is a module for [Wowza Streaming Engine™ media server software](https://www.wowza.com/products/streaming-engine) that allows you to specify a different path for a Synchronized Multimedia Integration Language (SMIL) file from the adaptive bitrate streams that it references. Normally the SMIL file and the video on demand (VOD) assets are required to be stored in the same folder.
+MediaListPathSelector is a module for [Wowza Streaming Engine™ media server software](https://www.wowza.com/products/streaming-engine) that allows you to specify a different path for the media content in a Synchronized Multimedia Integration Language (SMIL) file. Normally, the media files must reside in teh same location as the SMIL file or in a sub folder below it. This module allows the SMIL file and media files to be separated.
 
 ## Prerequisites
 
@@ -8,11 +8,7 @@ Wowza Streaming Engine 4.0.0 or later is required.
 
 ## Usage
 
-This Media Reader can be added to a new or existing VOD application type.
-
-It is a custom RandonAccessReader class that provides the following functionality:
-
-* Different locations for the SMIL file and the content it references, including Media Cache sources.
+With a VOD application, when a SMIL file is read by Wowza Streaming Engine, the location of the SMIL file will be prepended to all of the content paths listed in the SMIL file. If the actual content location is the same as for the SMIL file or in a subfolder below the SMIL file then this is OK but if the content is located on a different path or in a folder above the SMIL file folder then it can cause problems. When the actual media file is processed, this module will check the media file path against a list of prefixes and strip of any prefix that matches so the original media path defined in the SMIL file will be used.
 
 ## API Reference
 
@@ -22,7 +18,7 @@ It is a custom RandonAccessReader class that provides the following functionalit
 
 Wowza Media Systems™ provides developers with a platform to create streaming applications and solutions. See [Wowza Developer Tools](https://www.wowza.com/resources/developers) to learn more about our APIs and SDK.
 
-To use the compiled version of this module, see [How to mix audio and video from different live sources (ModuleSourceSelector](https://www.wowza.com/forums/content.php?645-How-to-use-different-Media-Cache-Sources-for-SMIL-files-and-VOD-assets-%28MediaCacheSourceSelector%29).
+To use the compiled version of this module, see [How to use different locations for SMIL files and VOD assets (MediaListPathSelector)](https://www.wowza.com/forums/content.php?645-How-to-use-different-locations-for-SMIL-files-and-VOD-assets-(MediaListPathSelector)).
 
 ## Contact
 
