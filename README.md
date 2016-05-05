@@ -1,6 +1,6 @@
-# MediaListPathSelector
+# ModuleMediaListPathSelector
 
-MediaListPathSelector is a module for [Wowza Streaming Engine™ media server software](https://www.wowza.com/products/streaming-engine) that allows you to specify a different path for the media content in a Synchronized Multimedia Integration Language (SMIL) file. Normally, the media files must reside in teh same location as the SMIL file or in a sub folder below it. This module allows the SMIL file and media files to be separated.
+The **ModuleMediaListPathSelector** module for [Wowza Streaming Engine™ media server software](https://www.wowza.com/products/streaming-engine) enables you to specify a different path for media content referenced in Synchronized Multimedia Integration Language (SMIL) files. Normally, the media content files must reside in the same location as the SMIL file or in a subfolder below it. This module allows the SMIL and media files to be separated.
 
 ## Prerequisites
 
@@ -8,7 +8,9 @@ Wowza Streaming Engine 4.0.0 or later is required.
 
 ## Usage
 
-With a VOD application, when a SMIL file is read by Wowza Streaming Engine, the location of the SMIL file will be prepended to all of the content paths listed in the SMIL file. If the actual content location is the same as for the SMIL file or in a subfolder below the SMIL file then this is OK but if the content is located on a different path or in a folder above the SMIL file folder then it can cause problems. When the actual media file is processed, this module will check the media file path against a list of prefixes and strip of any prefix that matches so the original media path defined in the SMIL file will be used.
+With VOD applications, when a SMIL file is read by Wowza Streaming Engine, the SMIL file location is prepended to all of the content paths defined in the SMIL file. This works if the referenced content is stored in the same folder as the SMIL file or in a subfolder below the folder that has the SMIL file.
+
+Use this module in situations where the referenced content and SMIL file are stored in different directory paths or where the content is stored in a folder above the SMIL file folder in the same path. When the content files are processed, this module checks the path against a list of prefixes and removes any prepended prefixes that match so the original content path defined in the SMIL file is used.
 
 ## API Reference
 
@@ -18,7 +20,7 @@ With a VOD application, when a SMIL file is read by Wowza Streaming Engine, the 
 
 Wowza Media Systems™ provides developers with a platform to create streaming applications and solutions. See [Wowza Developer Tools](https://www.wowza.com/resources/developers) to learn more about our APIs and SDK.
 
-To use the compiled version of this module, see [How to use different locations for SMIL files and VOD assets (MediaListPathSelector)](https://www.wowza.com/forums/content.php?645-How-to-use-different-locations-for-SMIL-files-and-VOD-assets-(MediaListPathSelector)).
+To use the compiled version of this module, see [How to use different locations for SMIL files and VOD assets (ModuleMediaListPathSelector)](https://www.wowza.com/forums/content.php?645-How-to-use-different-locations-for-SMIL-files-and-VOD-assets-%28ModuleMediaListPathSelector%29).
 
 ## Contact
 
@@ -26,4 +28,4 @@ To use the compiled version of this module, see [How to use different locations 
 
 ## License
 
-This code is distributed under the [Wowza Public License](https://github.com/WowzaMediaSystems/wse-plugin-sourceselector/blob/master/LICENSE.txt).
+This code is distributed under the [Wowza Public License](https://github.com/WowzaMediaSystems/wse-plugin-pathselector/blob/master/LICENSE.txt).
