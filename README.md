@@ -12,7 +12,7 @@ With VOD applications, when a SMIL file is read by Wowza Streaming Engine, the S
 
 Use this module in situations where the referenced content and SMIL file are stored in different directory paths or where the content is stored in a folder above the SMIL file folder in the same path. When the content files are processed, this module checks the path against a list of prefixes and removes any prepended prefixes that match so the original content path defined in the SMIL file is used.
 
-## API Reference
+## More resources
 
 [Wowza Streaming Engine Server-Side API Reference](https://www.wowza.com/resources/WowzaStreamingEngine_ServerSideAPI.pdf)
 
