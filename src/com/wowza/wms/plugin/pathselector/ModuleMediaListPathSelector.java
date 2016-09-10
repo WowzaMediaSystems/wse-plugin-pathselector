@@ -13,7 +13,7 @@ public class ModuleMediaListPathSelector extends ModuleBase
 	public static final String MODULE_NAME = "ModuleMediaListPathSelector";
 	public static final String PROP_NAME_PREFIX = "pathSelector";
 	
-	public static final String SOURCE_SELECTOR_RANDOM_ACCESS_READER_CLASS = "com.wowza.wms.plugin.collection.mediareaders.RandomAccessReaderMediaListPathSelector";
+	public static final String SOURCE_SELECTOR_RANDOM_ACCESS_READER_CLASS = "com.wowza.wms.plugin.pathselector.RandomAccessReaderMediaListPathSelector";
 	
 	public void onAppStart(IApplicationInstance appInstance)
 	{
