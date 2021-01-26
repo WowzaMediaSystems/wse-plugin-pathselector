@@ -32,8 +32,7 @@ public class RandomAccessReaderMediaListPathSelector implements IRandomAccessRea
 			try
 			{
 				Class<?> readerClass = Class.forName(readerClassName);
-				if (readerClass != null)
-					localReader = (IRandomAccessReader)readerClass.newInstance();
+				localReader = (IRandomAccessReader)readerClass.getDeclaredConstructor().newInstance();
 			}
 			catch (Exception e)
 			{
@@ -61,7 +60,7 @@ public class RandomAccessReaderMediaListPathSelector implements IRandomAccessRea
 				int idx = mediaName.indexOf(prefix);
 				if (idx >= 0)
 				{
-					mediaName = mediaName.substring(idx, mediaName.length());
+					mediaName = mediaName.substring(idx);
 					break;
 				}
 			}
